@@ -1,0 +1,4 @@
+interface:
+  display_name: "Koki Long Video / 长视频"
+  short_description: "Tutorials, interviews and publishing / 教程与访谈"
+  default_prompt: "Use $long-video-editing to prepare my tutorial or interview in the requested format."
