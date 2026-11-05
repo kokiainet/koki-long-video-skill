@@ -8,9 +8,9 @@ A standalone skill from my own creator workflow, shared as a configurable public
 
 ## See the result
 
-**A long video can stay clear as cases, demonstrations, captions, and explanations build up.** This eight-second silent excerpt is from my Muse tutorial: the case labels appear with the spoken introduction while the speaker continues playing.
+**A long video can stay clear as cases, demonstrations, captions, and explanations build up.** This eight-second silent excerpt is from the original English version of my Muse tutorial: the case labels appear with the spoken introduction while the speaker continues playing. The clip uses English case labels and has no Chinese subtitles.
 
-![Real tutorial: case labels appearing alongside the speaker](docs/media/long-preview.gif)
+![Real tutorial: case labels appearing alongside the speaker](docs/media/long-preview-en.gif)
 
 The finished composition below gives the speaker room while organizing several use cases around her:
 
@@ -59,9 +59,9 @@ Supply the footage/project, tutorial or interview format, reference script, scre
 ```text
 Use $long-video-editing with ChatCut.
 Source footage: ./input/tutorial/
-This is a 16:9 software tutorial. Organize it by the actual use cases.
+This is an English 16:9 software tutorial. Organize it by the actual use cases.
 Use ./media/ for demonstrations and screenshots; keep the UI readable.
-Align chapter titles and captions to the spoken steps. When a screenshot
+Use English chapter titles and captions aligned to the spoken steps. When a screenshot
 takes the main frame, use an unobstructed speaker inset where appropriate.
 Save an editable project and show the result.
 ```
