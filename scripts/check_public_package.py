@@ -2,12 +2,15 @@
 """Check the files intended for the public skills repository, without printing secrets."""
 from pathlib import Path
 import re
+import hashlib
 import subprocess
 import sys
 
 ROOT = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path(__file__).resolve().parents[1]
 ROOT_FILES = {"README.md", "README.zh-CN.md", "PRIVACY.md", "LICENSE", ".gitignore", "creator.example.yaml", "package.json", "package-lock.json"}
 ALLOWED_SUFFIXES = {".md", ".yaml", ".cjs", ".py"}
+# Exact, visually reviewed public demos. Re-review media before changing hashes.
+PUBLIC_MEDIA = {'docs/media/tutorial-overview.jpg': '4de5e1271706a8f81198dba85fe8d655a6ffb7e09baab08d03c6ad1685c750c3', 'docs/media/long-preview.gif': '366ec3dc080ab4d696d89bf78bc9e7fc2b44f4567d1b18cb5d0f251ebdcabb00'}
 PATTERNS = {
     "private-absolute-path": re.compile(r"/(?:Users|home|private/var|var/folders)/[^\s`\"'<>]+"),
     "windows-user-path": re.compile(r"\b[A-Za-z]:\\Users\\[^\s`\"'<>]+"),
@@ -33,7 +36,11 @@ def check():
     files = candidates()
     for path in files:
         rel = path.relative_to(ROOT)
-        allowed = str(rel) in ROOT_FILES or (rel.parts[0] in {"skills", "scripts"} and path.suffix in ALLOWED_SUFFIXES)
+        if str(rel) in PUBLIC_MEDIA:
+            if hashlib.sha256(path.read_bytes()).hexdigest() != PUBLIC_MEDIA[str(rel)]:
+                findings.append((str(rel), 0, "unreviewed-media-change"))
+            continue
+        allowed = str(rel) in ROOT_FILES or (rel.parts[0] in {"skills", "scripts", "docs"} and path.suffix in ALLOWED_SUFFIXES) or str(rel) in {"examples/voice-note.txt", "examples/article.md", "examples/article-preview.html"}
         if not allowed:
             findings.append((str(rel), 0, "unexpected-public-file"))
             continue
