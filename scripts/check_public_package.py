@@ -10,7 +10,7 @@ ROOT = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path(__file__).reso
 ROOT_FILES = {"README.md", "README.zh-CN.md", "PRIVACY.md", "LICENSE", ".gitignore", "creator.example.yaml", "package.json", "package-lock.json"}
 ALLOWED_SUFFIXES = {".md", ".yaml", ".cjs", ".py"}
 # Exact, visually reviewed public demos. Re-review media before changing hashes.
-PUBLIC_MEDIA = {'docs/media/tutorial-overview.jpg': '4de5e1271706a8f81198dba85fe8d655a6ffb7e09baab08d03c6ad1685c750c3', 'docs/media/long-preview.gif': '366ec3dc080ab4d696d89bf78bc9e7fc2b44f4567d1b18cb5d0f251ebdcabb00'}
+PUBLIC_MEDIA = {'docs/media/long-preview-en.gif': '7862650b9153060eb2bb5099338b23b08d08b5cd27331e4d1f89b18282c38240', 'docs/media/long-preview.gif': '366ec3dc080ab4d696d89bf78bc9e7fc2b44f4567d1b18cb5d0f251ebdcabb00', 'docs/media/tutorial-overview.jpg': '4de5e1271706a8f81198dba85fe8d655a6ffb7e09baab08d03c6ad1685c750c3'}
 PATTERNS = {
     "private-absolute-path": re.compile(r"/(?:Users|home|private/var|var/folders)/[^\s`\"'<>]+"),
     "windows-user-path": re.compile(r"\b[A-Za-z]:\\Users\\[^\s`\"'<>]+"),
