@@ -2,6 +2,8 @@
 
 ## English
 
+The English README uses `long-preview-en.gif`, an eight-second excerpt (00:18–00:26) from Koki's original English Muse tutorial, retaining its English case-label animation without Chinese subtitles. `tutorial-overview.jpg` already contains English text. The Chinese README retains the separate Chinese-captioned preview.
+
 `long-preview.gif` is a silent, reduced-size excerpt from 00:18–00:26 of Koki's edited Muse tutorial. It preserves the existing speaker footage, case-label animation, and captions. `tutorial-overview.jpg` is a real composed preview frame from the same tutorial workflow. These show actual project output; they are not generated mockups or a claim that a new installation reproduces the exact same style without configuration.
 
 ## 简体中文
