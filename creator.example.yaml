@@ -1,0 +1,13 @@
+# Copy to creator.local.yaml in your working project. / 复制到工作项目。
+# Read by the agent; not an executable or account authorization file.
+creator:
+  display_name: "Creator"
+  identity_line: ""
+media:
+  topic_directory: "./private-media/topic"
+  closing_images: []
+long_video:
+  width: 1920
+  height: 1080
+  keep_original_playback_rate: true
+  add_chapter_navigation: false
